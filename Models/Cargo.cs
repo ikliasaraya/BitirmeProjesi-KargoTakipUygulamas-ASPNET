@@ -41,6 +41,11 @@ namespace KargoTakipUygulaması.Models
 
         public User Sender { get; set; }
 
+        public double? Latitude { get; set; } = 37.0; // Adana enlemi
+        public double? Longitude { get; set; } = 35.3213; // Adana boylamı
+
         public ICollection<CargoStatus> CargoStatuses { get; set; } = new List<CargoStatus>();
+        public ICollection<CargoLocation> CargoLocations { get; set; } // Yeni eklenen kısım
+
     }
 }

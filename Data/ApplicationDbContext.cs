@@ -13,6 +13,8 @@ namespace KargoTakipUygulaması.Data
 
         public DbSet<Cargo> Cargos { get; set; }
         public DbSet<CargoStatus> CargoStatuses { get; set; }
+        public DbSet<CargoLocation> CargoLocations { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -29,6 +31,19 @@ namespace KargoTakipUygulaması.Data
                 .HasMany(c => c.CargoStatuses)
                 .WithOne(cs => cs.Cargo)
                 .HasForeignKey(cs => cs.CargoId);
+
+            modelBuilder.Entity<Cargo>()
+                .HasMany(c => c.CargoLocations) // Eklenen kısım
+                .WithOne(cl => cl.Cargo)
+                .HasForeignKey(cl => cl.CargoId);
+
+            modelBuilder.Entity<Cargo>()
+                .Property(c => c.Latitude)
+                .HasDefaultValue(37.0);
+
+            modelBuilder.Entity<Cargo>()
+                .Property(c => c.Longitude)
+                .HasDefaultValue(35.3213);
         }
     }
 }

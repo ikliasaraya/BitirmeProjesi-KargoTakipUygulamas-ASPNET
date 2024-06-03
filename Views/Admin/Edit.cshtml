@@ -1,0 +1,99 @@
+﻿@model KargoTakipUygulaması.Models.Cargo
+
+@{
+    ViewData["Title"] = "Kargo Düzenle";
+}
+
+<h1 class="text-center mt-5">Kargo Düzenle</h1>
+
+<div class="container mt-5">
+    <form asp-action="Edit" method="post" class="p-4 border rounded shadow-sm">
+        @Html.AntiForgeryToken()
+        <div class="form-group">
+            <label asp-for="RecipientIdentityNumber" class="control-label">Alıcı Kimlik Numarası</label>
+            <input asp-for="RecipientIdentityNumber" class="form-control" />
+            <span asp-validation-for="RecipientIdentityNumber" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="RecipientName" class="control-label">Alıcı Adı</label>
+            <input asp-for="RecipientName" class="form-control" />
+            <span asp-validation-for="RecipientName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="RecipientSurname" class="control-label">Alıcı Soyadı</label>
+            <input asp-for="RecipientSurname" class="form-control" />
+            <span asp-validation-for="RecipientSurname" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Status" class="control-label">Durum</label>
+            <select asp-for="Status" class="form-control">
+                <option value="Onay Bekliyor">Onay Bekliyor</option>
+                <option value="Onaylandı">Onaylandı</option>
+                <option value="Yola Çıktı">Yola Çıktı</option>
+                <option value="Dağıtımda">Dağıtımda</option>
+                <option value="Ulaştı">Ulaştı</option>
+            </select>
+            <span asp-validation-for="Status" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ShipmentDate" class="control-label">Gönderim Tarihi</label>
+            <input asp-for="ShipmentDate" class="form-control" type="datetime-local" />
+            <span asp-validation-for="ShipmentDate" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Address" class="control-label">Adres</label>
+            <textarea asp-for="Address" class="form-control" maxlength="300" rows="3"></textarea>
+            <span asp-validation-for="Address" class="text-danger"></span>
+        </div>
+        <div class="form-group text-center mt-2">
+            <input type="submit" value="Kaydet" class="btn btn-primary btn-block" />
+        </div>
+    </form>
+    <div class="text-center mt-2">
+        <a asp-action="Index" class="btn btn-secondary">Listeye Dön</a>
+    </div>
+</div>
+
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .container {
+        max-width: 800px;
+    }
+
+    .card {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border: none;
+        border-radius: 8px;
+    }
+
+    .card-header {
+        background-color: #007bff;
+        color: white;
+        font-weight: bold;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+    }
+
+    .card-body {
+        padding: 2rem;
+    }
+
+    .btn {
+        padding: 0.5rem 2rem;
+        border-radius: 20px;
+        font-size: 1rem;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border: none;
+    }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        border: none;
+    }
+</style>

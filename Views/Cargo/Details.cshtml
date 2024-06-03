@@ -56,6 +56,7 @@
                     @Html.DisplayFor(model => model.Address)
                 </dd>
             </dl>
+            <div id="map" style="height: 400px; width: 100%;"></div>
         </div>
     </div>
     <div class="mt-4">
@@ -63,6 +64,26 @@
         <a asp-action="Index" class="btn btn-secondary">Listeye Dön</a>
     </div>
 </div>
+
+@section Scripts {
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZqzQnwxcSSQOpQLUzFXEd08pkxtoesPQ&callback=initMap" async defer></script>
+    <script>
+        function initMap() {
+            var cargoLocation = {
+                lat: @Model.Latitude ?? 37.0,
+                lng: @Model.Longitude ?? 35.3213
+            };
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 12,
+                center: cargoLocation
+            });
+            var marker = new google.maps.Marker({
+                position: cargoLocation,
+                map: map
+            });
+        }
+    </script>
+}
 
 <style>
     body {

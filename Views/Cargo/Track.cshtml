@@ -1,0 +1,32 @@
+﻿@model KargoTakipUygulaması.Models.Cargo
+
+@{
+    ViewData["Title"] = "Kargo Takip";
+}
+
+<h1>Kargo Takip</h1>
+
+<div id="map" style="height: 500px; width: 100%;"></div>
+
+@section Scripts {
+    <script>
+        function initMap() {
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 12,
+                center: { lat: @Model.CargoLocations.FirstOrDefault()?.Latitude ?? 0, lng: @Model.CargoLocations.FirstOrDefault()?.Longitude ?? 0 }
+            });
+
+            var markers = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.CargoLocations.Select(loc => new { lat = loc.Latitude, lng = loc.Longitude })));
+
+            markers.forEach(function (marker) {
+                new google.maps.Marker({
+                    position: marker,
+                    map: map
+                });
+            });
+        }
+    </script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZqzQnwxcSSQOpQLUzFXEd08pkxtoesPQ&callback=initMap">
+    </script>
+}

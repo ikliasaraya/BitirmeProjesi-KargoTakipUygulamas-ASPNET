@@ -212,6 +212,26 @@ namespace KargoTakipUygulaması.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        // Cargo Track
+        public async Task<IActionResult> Track(string id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var cargo = await _context.Cargos
+                .Include(c => c.CargoLocations)
+                .FirstOrDefaultAsync(m => m.Id == id);
+
+            if (cargo == null)
+            {
+                return NotFound();
+            }
+
+            return View(cargo);
+        }
+
         // GET: Cargo/History
         public async Task<IActionResult> History()
         {
