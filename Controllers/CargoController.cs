@@ -194,7 +194,6 @@ namespace KargoTakipUygulaması.Controllers
             return View(cargo);
         }
 
-
         // POST: Cargo/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
@@ -211,6 +210,39 @@ namespace KargoTakipUygulaması.Controllers
             await _context.SaveChangesAsync();
             _logger.LogInformation("Cargo with ID: {Id} deleted successfully", cargo.Id);
             return RedirectToAction(nameof(Index));
+        }
+
+        // GET: Cargo/History
+        public async Task<IActionResult> History()
+        {
+            var userId = _userManager.GetUserId(User);
+            if (userId == null)
+            {
+                _logger.LogError("User ID is null.");
+                return Unauthorized();
+            }
+
+            var userIdentityNumber = _context.Users
+                .Where(u => u.Id == userId)
+                .Select(u => u.IdentityNumber)
+                .FirstOrDefault();
+
+            var sentCargos = await _context.Cargos
+                .Include(c => c.Sender)
+                .Where(c => c.SenderId == userId)
+                .ToListAsync();
+
+            var receivedCargos = await _context.Cargos
+                .Where(c => c.RecipientIdentityNumber == userIdentityNumber)
+                .ToListAsync();
+
+            var viewModel = new CargoHistoryViewModel
+            {
+                SentCargos = sentCargos,
+                ReceivedCargos = receivedCargos
+            };
+
+            return View(viewModel);
         }
 
         private bool CargoExists(string id)

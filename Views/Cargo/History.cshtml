@@ -1,0 +1,95 @@
+﻿@model KargoTakipUygulaması.Models.CargoHistoryViewModel
+
+@{
+    ViewData["Title"] = "Kargo Geçmişi";
+}
+
+<h1 class="text-center my-4">Kargo Geçmişinizi Buradan Takip Edebilirsiniz</h1>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-12 mb-4">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h2>Kargo Geçmişi</h2>
+                </div>
+                <div class="card-body">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Durum</th>
+                                <th>Gönderim Tarihi</th>
+                                <th>Adres</th>
+                                <th>Ad</th>
+                                <th>Soyad</th>
+                                <th>Kimlik Numarası</th>
+                                <th>Tip</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var cargo in Model.SentCargos)
+                            {
+                                <tr>
+                                    <td>@cargo.Status</td>
+                                    <td>@cargo.ShipmentDate</td>
+                                    <td>@cargo.Address</td>
+                                    <td>@cargo.RecipientName</td>
+                                    <td>@cargo.RecipientSurname</td>
+                                    <td>@cargo.RecipientIdentityNumber</td>
+                                    <td>Gönderildi</td>
+                                </tr>
+                            }
+                            @foreach (var cargo in Model.ReceivedCargos)
+                            {
+                                <tr>
+                                    <td>@cargo.Status</td>
+                                    <td>@cargo.ShipmentDate</td>
+                                    <td>@cargo.Address</td>
+                                    <td>@cargo.RecipientName</td>
+                                    <td>@cargo.RecipientSurname</td>
+                                    <td>@cargo.RecipientIdentityNumber</td>
+                                    <td>Alındı</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .bg-primary {
+        background-color: #007bff !important;
+    }
+
+    .text-white {
+        color: #ffffff !important;
+    }
+
+    .p-2 {
+        padding: 0.5rem !important;
+    }
+
+    .p-3 {
+        padding: 1rem !important;
+    }
+
+    .border {
+        border: 1px solid #dee2e6 !important;
+    }
+
+    .rounded {
+        border-radius: 0.25rem !important;
+    }
+
+    .shadow-sm {
+        box-shadow: 0 .125rem .25rem rgba(0, 0, 0, 0.075) !important;
+    }
+
+    .table-hover tbody tr:hover {
+        color: #212529;
+        background-color: rgba(0, 0, 0, 0.075);
+    }
+</style>
