@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Kargo Takip Sistemi</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            color: #007bff;
+            display: flex;
+            align-items: center;
+        }
+
+            .navbar-brand img {
+                height: 40px; /* Adjust the height of the logo */
+                margin-right: 10px;
+                transition: transform 0.3s, height 0.3s;
+            }
+
+                .navbar-brand img:hover {
+                    transform: rotate(20deg);
+                    height: 45px; /* Slightly larger on hover */
+                }
+
+        .nav-link {
+            color: #343a40;
+            transition: color 0.3s;
+        }
+
+            .nav-link:hover {
+                color: #007bff;
+            }
+
+        .container {
+            max-width: 960px;
+        }
+
+        .main-content {
+            flex: 1;
+            padding-top: 1.5rem;
+        }
+
+        .footer {
+            background-color: #f8f9fa;
+            height: 5vh;
+            min-height: 50px; /* Minimum height for very short screens */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+            .footer a {
+                color: #007bff;
+                text-decoration: none;
+            }
+
+                .footer a:hover {
+                    text-decoration: underline;
+                }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="/img/logo.png" alt="Logo" /> Kargo Takip Sistemi
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Cargo" asp-action="Index">Kargolar</a>
+                        </li>
+                    </ul>
+                    <partial name="_LoginPartial" />
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container main-content">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="footer text-muted">
+        <div class="container">
+            &copy; 2023 - Kargo Takip Sistemi - <a asp-area="" asp-controller="Home" asp-action="Privacy">Gizlilik Politikası</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

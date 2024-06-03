@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Anasayfa";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Kargo Takip Sistemine Hoşgeldiniz</h1>
+    <img src="/img/logo.png" class="img-fluid my-4" alt="Spor Ayakkabıyla Koşan Kargo">
+    <p class="lead">Kargonuzu kolayca takip edin ve yönetin.</p>
+    <hr class="my-4">
+    <p>Aşağıdaki özelliklerimizden yararlanmaya başlayın:</p>
+
+    <div class="d-flex justify-content-center">
+        <div class="card m-2" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Kargonuzu Takip Edin</h5>
+                <p class="card-text">Kargonuzun nerede olduğunu öğrenin ve güncel durumunu kontrol edin.</p>
+                <a href="@Url.Action("Index", "Cargo")" class="btn btn-primary">Takip Et</a>
+            </div>
+        </div>
+        <div class="card m-2" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Kargo Geçmişi</h5>
+                <p class="card-text">Geçmiş kargo işlemlerinizi görüntüleyin.</p>
+                <a href="@Url.Action("History", "Cargo")" class="btn btn-secondary">Geçmişi Görüntüle</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="text-center mt-4">
+    <a href="@Url.Action("Index", "Home")" class="btn btn-outline-primary">Daha Fazla Bilgi Edinin</a>
+</div>
