@@ -85,3 +85,24 @@ Bu rapor, Kargo Takip Uygulaması'nın özelliklerini ve kullanımını detaylı
 Kargo Takip Uygulaması, kullanıcıların kargolarını etkili bir şekilde takip edebilmeleri ve yönetebilmeleri için kapsamlı bir çözüm sunmaktadır. Kullanıcı dostu arayüzü, Google Maps entegrasyonu ve admin paneli ile güçlü bir işlevsellik sağlamaktadır. Bu proje, modern web teknolojileri kullanılarak geliştirilmiş olup, kullanıcıların ihtiyaçlarını karşılamak için tasarlanmıştır.
 
 Proje hakkında daha fazla bilgi ve ayrıntı için proje dosyalarını ve kodları inceleyebilirsiniz. Teşekkürler!
+
+## Ekran Alıntıları
+
+![Screenshot_1](https://github.com/ikliasaraya/BitirmeProjesi-KargoTakipUygulamas-ASPNET/assets/65564309/941d9ed2-5f9f-48db-9f40-870136be8532)
+![Screenshot_2](https://github.com/ikliasaraya/BitirmeProjesi-KargoTakipUygulamas-ASPNET/assets/65564309/449eb91a-5d40-4c5b-85b3-866deba62b33)
+![Screenshot_3](https://github.com/ikliasaraya/BitirmeProjesi-KargoTakipUygulamas-ASPNET/assets/65564309/ffd503ef-b6d9-4f6c-9368-2ebd16853829)
+![Screenshot_4](https://github.com/ikliasaraya/BitirmeProjesi-KargoTakipUygulamas-ASPNET/assets/65564309/ab1b7d1e-5fb2-46ab-9a86-f0601bc0ab65)
+![Screenshot_5](https://github.com/ikliasaraya/BitirmeProjesi-KargoTakipUygulamas-ASPNET/assets/65564309/1111e354-e58d-4105-96e0-6f1db6e2239f)
+![Screenshot_6](https://github.com/ikliasaraya/BitirmeProjesi-KargoTakipUygulamas-ASPNET/assets/65564309/adc0c624-7e38-4b27-89ff-9ec204fd701d)
+![Screenshot_7](https://github.com/ikliasaraya/BitirmeProjesi-KargoTakipUygulamas-ASPNET/assets/65564309/2fea1cbe-bbe4-4e16-b71a-0254d74f79cc)
+![Screenshot_8](https://github.com/ikliasaraya/BitirmeProjesi-KargoTakipUygulamas-ASPNET/assets/65564309/808f633c-b8dc-4245-8820-106b792c4473)
+![Screenshot_9](https://github.com/ikliasaraya/BitirmeProjesi-KargoTakipUygulamas-ASPNET/assets/65564309/c48c38b4-6393-406d-a37a-2b9c044b8824)
+![Screenshot_10](https://github.com/ikliasaraya/BitirmeProjesi-KargoTakipUygulamas-ASPNET/assets/65564309/c8085185-702f-4ea8-9870-623cf4f57798)
+![Screenshot_11](https://github.com/ikliasaraya/BitirmeProjesi-KargoTakipUygulamas-ASPNET/assets/65564309/2a78ed4f-5df8-457d-bcda-6e06316a32da)
+![Screenshot_12](https://github.com/ikliasaraya/BitirmeProjesi-KargoTakipUygulamas-ASPNET/assets/65564309/b0cab7a8-bf0e-461b-9588-dbce9e98ff7c)
+![Screenshot_13](https://github.com/ikliasaraya/BitirmeProjesi-KargoTakipUygulamas-ASPNET/assets/65564309/8abb1fe9-5373-4c45-a4e7-d23a49a026b6)
+![Screenshot_14](https://github.com/ikliasaraya/BitirmeProjesi-KargoTakipUygulamas-ASPNET/assets/65564309/105f23ab-d099-4aca-8f62-0cb916446e5b)
+
+
+
+
