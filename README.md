@@ -28,7 +28,6 @@ Bu rapor, Kargo Takip Uygulaması'nın özelliklerini ve kullanımını detaylı
 ### 1. Kargo Takip Sistemi
 - **Kargo Durumu Sorgulama**
   - Kullanıcılar, ana sayfadaki kargo takip formunu kullanarak kargo ID'si ile kargo durumunu sorgulayabilirler.
-  - Hassas bilgiler sansürlenmiş olarak gösterilir (örneğin, alıcı adı: "Al**", soyadı: "Sar****").
 
 ### 2. Kargo Geçmişi
 - **Gönderilen ve Alınan Kargoların Görüntülenmesi**
