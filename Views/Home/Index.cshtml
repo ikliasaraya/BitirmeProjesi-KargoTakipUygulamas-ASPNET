@@ -1,4 +1,5 @@
-﻿@{
+﻿@model KargoTakipUygulaması.Models.Cargo
+@{
     ViewData["Title"] = "Anasayfa";
 }
 
@@ -17,6 +18,17 @@
                 <a href="@Url.Action("Index", "Cargo")" class="btn btn-primary">Takip Et</a>
             </div>
         </div>
+
+        <div class="card m-2" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Kargo Takip Kodu ile Sorgula</h5>
+                <form asp-action="TrackCargo" method="post" class="form-inline">
+                    <input type="text" name="cargoId" class="form-control mb-2 mr-sm-2" placeholder="Kargo ID" required />
+                    <button type="submit" class="btn btn-primary mb-2">Sorgula</button>
+                </form>
+            </div>
+        </div>
+
         <div class="card m-2" style="width: 18rem;">
             <div class="card-body">
                 <h5 class="card-title">Kargo Geçmişi</h5>
@@ -30,3 +42,47 @@
 <div class="text-center mt-4">
     <a href="@Url.Action("Index", "Home")" class="btn btn-outline-primary">Daha Fazla Bilgi Edinin</a>
 </div>
+
+@if (ViewData["Cargo"] != null)
+{
+    var cargo = (KargoTakipUygulaması.Models.Cargo)ViewData["Cargo"];
+    <div class="modal fade show" id="cargoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" style="display: block; background: rgba(0, 0, 0, 0.5);">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Kargo Durumu</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Kapat" onclick="closeModal()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p class="card-text">Kargo ID: @cargo.Id</p>
+                    <p class="card-text">Durum: @cargo.Status</p>
+                    <p class="card-text">Alıcı Adı: @cargo.RecipientName</p>
+                    <p class="card-text">Alıcı Soyadı: @cargo.RecipientSurname</p>
+                    <p class="card-text">Adres: @cargo.Address</p>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+else if (ViewData["Error"] != null)
+{
+    <div class="text-center mt-4">
+        <div class="card m-2" style="width: 18rem; margin: auto;">
+            <div class="card-body">
+                <h5 class="card-title text-danger">Hata</h5>
+                <p class="card-text">@ViewData["Error"]</p>
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    <script>
+        function closeModal() {
+            var modal = document.getElementById('cargoModal');
+            modal.style.display = 'none';
+        }
+    </script>
+}

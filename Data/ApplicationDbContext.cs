@@ -20,7 +20,6 @@ namespace KargoTakipUygulaması.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            // Define relationships and keys
             modelBuilder.Entity<User>()
                 .HasMany(u => u.SentCargos)
                 .WithOne(c => c.Sender)
@@ -33,7 +32,7 @@ namespace KargoTakipUygulaması.Data
                 .HasForeignKey(cs => cs.CargoId);
 
             modelBuilder.Entity<Cargo>()
-                .HasMany(c => c.CargoLocations) // Eklenen kısım
+                .HasMany(c => c.CargoLocations) 
                 .WithOne(cl => cl.Cargo)
                 .HasForeignKey(cl => cl.CargoId);
 

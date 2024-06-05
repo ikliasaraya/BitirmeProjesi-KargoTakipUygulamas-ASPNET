@@ -45,7 +45,7 @@ namespace KargoTakipUygulaması.Models
         public double? Longitude { get; set; } = 35.3213; // Adana boylamı
 
         public ICollection<CargoStatus> CargoStatuses { get; set; } = new List<CargoStatus>();
-        public ICollection<CargoLocation> CargoLocations { get; set; } // Yeni eklenen kısım
+        public ICollection<CargoLocation> CargoLocations { get; set; } 
 
     }
 }
